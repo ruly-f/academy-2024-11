@@ -1,0 +1,10 @@
+models:
+  - name: int_vendas__metricas_de_vendas
+    description: PARA PREENCHER.
+    columns:
+      - name: PK_PEDIDO_ITEM
+        description: PARA PREENCHER.
+        data_tests:
+          - unique
+          - not_null
+              
