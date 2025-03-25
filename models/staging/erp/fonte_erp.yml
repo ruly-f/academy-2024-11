@@ -17,3 +17,5 @@ sources:
       - name: employees
       - name: orders
       - name: order_details
+      - name: shippers
+      - name: customers
