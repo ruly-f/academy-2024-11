@@ -1,0 +1,36 @@
+models:
+  - name: dim_employees
+    description: >
+      Dimension table that contains information about company employees, including personal and 
+      professional details such as name, title, hire date, and location. This dimension may also
+      include a self-join to provide the name of each employee's direct manager.
+    columns:
+      - name: employee_pk
+        description: Unique identifier for each employee.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_name
+        description: Full name of the employee.
+
+      - name: employee_title
+        description: Job title of the employee.
+
+      - name: manager_name
+        description: Name of the employee's direct manager.
+
+      - name: employee_birth_date
+        description: Date of birth of the employee.
+
+      - name: employee_hire_date
+        description: Hire date of the employee.
+
+      - name: employee_city
+        description: City where the employee is located.
+
+      - name: employee_region
+        description: Region where the employee is located.
+
+      - name: employee_country
+        description: Country where the employee is located.

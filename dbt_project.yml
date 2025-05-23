@@ -39,6 +39,7 @@ models:
   academy2411:
 
     intermediate:
+      +materialized: view
       +schema: int
 
     marts:
@@ -46,5 +47,6 @@ models:
       +schema: marts
 
     staging:
+      +materialized: view
       +schema: stg
       erp:
