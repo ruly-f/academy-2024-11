@@ -6,7 +6,7 @@ with
 
     , renamed as (
         select
-            {{ dbt_utils.generate_surrogate_key(['orderid', 'productid']) }} as order_item_pk
+            {{ dbt_utils.generate_surrogate_key(['orderid', 'productid']) }} as order_item_sk
             , cast(orderid as int) as order_fk
             , cast(productid as int) as product_fk
             , cast(discount as numeric(18,2)) as discount_pct

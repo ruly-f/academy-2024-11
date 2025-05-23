@@ -2,7 +2,7 @@ models:
   - name: int_order_items__metrics
     description: Intermediate model that joins order items with orders to calculate financial metrics and enrich with delivery details.
     columns:
-      - name: order_item_pk
+      - name: order_item_sk
         description: Unique identifier for each item in an order.
         tests:
           - unique

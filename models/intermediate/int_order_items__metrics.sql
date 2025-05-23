@@ -11,7 +11,7 @@ with
 
     , joined as (
         select
-            order_items.order_item_pk
+            order_items.order_item_sk
             , order_items.product_fk
             , orders.employee_fk
             , orders.customer_fk
@@ -34,7 +34,7 @@ with
 
     , metrics as (
         select 
-            order_item_pk
+            order_item_sk
             , product_fk
             , employee_fk
             , customer_fk
