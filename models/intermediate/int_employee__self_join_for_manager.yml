@@ -1,0 +1,35 @@
+models:
+  - name: int_employee__self_join_for_manager
+    description: >
+      Intermediate model that joins employees to their managers using a self join,
+      enriching employee records with manager names.
+    columns:
+      - name: employee_pk
+        description: Unique identifier for each employee.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_name
+        description: Full name of the employee.
+
+      - name: employee_title
+        description: Job title of the employee.
+
+      - name: manager_name
+        description: Name of the employee's direct manager.
+
+      - name: employee_birth_date
+        description: Date of birth of the employee.
+
+      - name: employee_hire_date
+        description: Hire date of the employee.
+
+      - name: employee_city
+        description: City where the employee is located.
+
+      - name: employee_region
+        description: Region where the employee is located.
+
+      - name: employee_country
+        description: Country where the employee is located.
