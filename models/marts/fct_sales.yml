@@ -2,7 +2,7 @@ models:
   - name: fct_sales
     description: Fact model with sales data and metrics.
     columns:
-      - name: order_item_pk
+      - name: order_item_sk
         description: Primary key of fct_sales model.
 
       - name: product_fk
