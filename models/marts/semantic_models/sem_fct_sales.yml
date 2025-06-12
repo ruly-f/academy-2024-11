@@ -4,6 +4,7 @@ semantic_models:
   model: ref('fct_sales')
   defaults:
     agg_time_dimension: order_date
+  
   entities:
   - name: order_item
     type: primary
@@ -20,16 +21,9 @@ semantic_models:
   - name: shipper
     type: foreign
     expr: shipper_fk
+
   dimensions:
   - name: order_date
-    type: time
-    type_params:
-      time_granularity: day
-  - name: ship_date
-    type: time
-    type_params:
-      time_granularity: day
-  - name: required_delivery_date
     type: time
     type_params:
       time_granularity: day
@@ -43,6 +37,7 @@ semantic_models:
     type: categorical
   - name: had_discount
     type: categorical
+
   measures:
   - name: quantity
     description: Quantity of the product ordered.
@@ -83,7 +78,7 @@ semantic_models:
     agg: count_distinct
     create_metric: true
     expr: customer_fk
-    
+
   - name: count_shipper
     agg: count_distinct
     create_metric: true
