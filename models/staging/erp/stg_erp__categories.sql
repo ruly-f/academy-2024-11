@@ -1,7 +1,7 @@
 with
     source_categories as (
         select *
-        from {{ source('erp', 'categories') }}
+        from {{ source('erp', 'category') }}
     )
 
     , renamed as (

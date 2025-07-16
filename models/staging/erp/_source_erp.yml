@@ -2,9 +2,9 @@ sources:
   - name: erp
     description: Northwind sales system.
     schema: RAW_NORTHWIND
-    database: MESH_DEV_DB
+    database: MESH_RAW_DB
     tables:
-      - name: categories
+      - name: category
         description: Contains product category definitions such as name and description.
         columns:
           - name: id
@@ -66,7 +66,7 @@ sources:
               - unique
               - not_null
 
-      - name: customers
+      - name: customer
         description: Contains customer data including company name and address.
         columns:
           - name: id
