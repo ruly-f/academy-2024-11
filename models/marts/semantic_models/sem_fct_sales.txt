@@ -1,0 +1,94 @@
+semantic_models:
+- name: fct_sales
+  description: Fact model with sales data and metrics.
+  model: ref('fct_sales')
+  defaults:
+    agg_time_dimension: order_date
+  entities:
+  - name: order_item
+    type: primary
+    expr: order_item_sk
+  - name: product
+    type: foreign
+    expr: product_fk
+  - name: employee
+    type: foreign
+    expr: employee_fk
+  - name: customer
+    type: foreign
+    expr: customer_fk
+  - name: shipper
+    type: foreign
+    expr: shipper_fk
+  dimensions:
+  - name: order_date
+    type: time
+    type_params:
+      time_granularity: day
+  - name: ship_date
+    type: time
+    type_params:
+      time_granularity: day
+  - name: required_delivery_date
+    type: time
+    type_params:
+      time_granularity: day
+  - name: recipient_name
+    type: categorical
+  - name: recipient_city
+    type: categorical
+  - name: recipient_region
+    type: categorical
+  - name: recipient_country
+    type: categorical
+  - name: had_discount
+    type: categorical
+  measures:
+  - name: discount_pct
+    description: Discount percentage applied to the item.
+    agg: average
+    create_metric: true
+  - name: unit_price
+    description: Price per unit of the product.
+    agg: average
+    create_metric: true
+  - name: quantity
+    description: Quantity of the product ordered.
+    agg: sum
+    create_metric: true
+  - name: freight
+    description: Total freight cost for the order.
+    agg: sum
+    create_metric: true
+  - name: gross_total
+    description: Total amount before discount for the order item (unit price * quantity).
+    agg: sum
+    create_metric: true
+  - name: net_total
+    description: Total amount after discount for the order item.
+    agg: sum
+    create_metric: true
+  - name: freight_allocated
+    description: Freight cost allocated to the order item based on item count.
+    agg: sum
+    create_metric: true
+  - name: count_order_item
+    agg: count
+    create_metric: true
+    expr: order_item_sk
+  - name: count_product
+    agg: count_distinct
+    create_metric: true
+    expr: product_fk
+  - name: count_employee
+    agg: count_distinct
+    create_metric: true
+    expr: employee_fk
+  - name: count_customer
+    agg: count_distinct
+    create_metric: true
+    expr: customer_fk
+  - name: count_shipper
+    agg: count_distinct
+    create_metric: true
+    expr: shipper_fk
