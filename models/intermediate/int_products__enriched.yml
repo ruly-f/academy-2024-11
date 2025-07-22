@@ -1,5 +1,5 @@
 models:
-  - name: int_product__with_category_and_supplier
+  - name: int_products__enriched
     description: Model that enriches product data with category and supplier information.
     columns:
       - name: product_pk

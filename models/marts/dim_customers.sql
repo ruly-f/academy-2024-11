@@ -7,3 +7,4 @@ with
 select *
 from fonte_customers
 -- add
+-- add
