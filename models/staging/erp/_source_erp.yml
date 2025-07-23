@@ -1,8 +1,8 @@
 sources:
   - name: erp
     description: Northwind sales system.
-    schema: raw_northwind
-    database: fea24_11
+    schema: RAW_NORTHWIND
+    database: MESH_RAW_DB
     tables:
       - name: category
         description: Contains product category definitions such as name and description.
@@ -49,7 +49,7 @@ sources:
               - unique
               - not_null
 
-      - name: order_details
+      - name: orders_detail
         description: Line items for each order including product, quantity, unit price, and discount.
         data_tests:
           - dbt_utils.unique_combination_of_columns:
@@ -66,7 +66,7 @@ sources:
               - unique
               - not_null
 
-      - name: customers
+      - name: customer
         description: Contains customer data including company name and address.
         columns:
           - name: id

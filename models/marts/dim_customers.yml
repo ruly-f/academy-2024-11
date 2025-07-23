@@ -1,5 +1,5 @@
 models:
-  - name: dim_customer
+  - name: dim_customers
     description: >
       Dimension table that contains customer information including company name and location details.
       This table is used to support analyses related to customer behavior, regional sales, and order distribution.
