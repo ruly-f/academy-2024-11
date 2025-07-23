@@ -11,6 +11,6 @@ with
             , cast(description as string) as category_description
         from source_categories
     )
-
+-- add
 select *
 from renamed
