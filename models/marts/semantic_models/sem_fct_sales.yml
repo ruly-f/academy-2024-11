@@ -109,15 +109,6 @@ metrics:
     measure:
       name: net_total
 
-- name: cumulative_gross_total_mtd
-  description: The month-to-date cumulative gross total for all orders.
-  label: Cumulative Gross Total (MTD)
-  type: cumulative
-  type_params:
-    grain_to_date: month
-    measure:
-      name: gross_total
-
 - name: discount_per_order
   description: The total discount applied per order item.
   label: Discount per Order
