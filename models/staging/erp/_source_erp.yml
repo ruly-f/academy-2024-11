@@ -53,9 +53,10 @@ sources:
         description: Line items for each order including product, quantity, unit price, and discount.
         data_tests:
           - dbt_utils.unique_combination_of_columns:
-              combination_of_columns:
-                - orderid
-                - productid
+              arguments:
+                combination_of_columns:
+                  - orderid
+                  - productid
 
       - name: shippers
         description: Contains information about shipping companies used to deliver orders.
