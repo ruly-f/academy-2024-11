@@ -13,4 +13,4 @@ with
     )
 
 select *
-from renamed
+from renamea
